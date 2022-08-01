@@ -1,10 +1,26 @@
 <html>
     <script>
+        //programa recebe um numero e verifica se já está na lista pre definida.
         //1- Receber um numero como parametro
         //2- Executar um for na lista e para cada elemento verificar se é igual o numero busca
         //3- Quando encontrar, interromper a execução e retornar true
         //4- Se chegar ate o fim sem encontrar, retornar false
-        
+        //5- Quando encontrar parar o for
+
+         var lista = [20, 85, 5, 78, 7, 12, 15, 28];
+
+        function verificaNumero(numero){
+            var existe = false;
+
+            for(var i = 0; i < lista.length; i++){
+                if(lista[i] === numero){
+                    existe = true;
+                    break;
+                }
+            }
+            return existe;
+        }
+
     </script>
 
 </html>
