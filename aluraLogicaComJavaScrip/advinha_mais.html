@@ -4,7 +4,46 @@
 <button>Compare com o numero que pensei</button>
 
 <script>
-    var  segredos =  [4,7,10,5];
+
+    //gerar numero aleatorio entre 1 a 10
+    function sorteia(){
+        return Math.round(Math.random() * 10);
+    }
+
+    //receber um numero e gerar um array de numeros com a quantidade solicitada.
+    //numeros aleatórios não duplicados,
+    function sorteiaNumeros(quantidade){
+
+        var numerosSorteados = [];
+
+        var numero = 1;
+        while(numero <= quantidade) {
+
+            var numeroAleatorio = sorteia();
+            if(numeroAleatorio != 0){
+                var achou = false;
+
+                for(var posicao = 0; posicao < numerosSorteados.length; posicao++){
+
+                    if (numerosSorteados[posicao] == numeroAleatorio){
+                        achou = true;
+                        break;
+                    }
+                }
+
+                if(achou == false){
+                    numerosSorteados.push(numeroAleatorio); 
+                    numero++; 
+                }     
+
+            }
+            
+        }
+
+        return numerosSorteados;
+    }
+
+    var  segredos =  sorteiaNumeros(3);
     
 
     var input = document.querySelector("input");
